@@ -17,7 +17,7 @@
     comments: [{ name: "John Morales" }, { name: "Rene Bustamante" }],
   });
 
-  let data = $formData; // Bind formData to this component
+  let data = $formData;
 
   // Handle data change event from JsonFormsWrapper
   const handleDataChange = (event: CustomEvent<FormData>) => {
@@ -96,10 +96,6 @@
     background-color: #f4f4f4;
     height: 650px;
     overflow-y: scroll;
-  }
-
-  input {
-    margin-top: 10px;
   }
 
   .textarea {
