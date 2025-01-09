@@ -1,19 +1,19 @@
-// svelte.config.js
-import adapter from '@sveltejs/adapter-static';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import adapter from '@sveltejs/adapter-static'; // Import adapter
 
-export default {
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
   kit: {
-    // Use adapter-static for static hosting on platforms like Render
+    // Use adapter-static for static site generation
     adapter: adapter(),
 
-    // This is important for static sites if you're deploying to a subdirectory
+    // You can adjust other options like base paths if necessary
     paths: {
-      base: '', // Leave empty for root-level deployment
-    },
-
-    // Optional settings to improve performance and reduce size
-    build: {
-      minify: true,
+      base: '', // Adjust if your app is in a subdirectory
     },
   },
+
+  preprocess: vitePreprocess(),
 };
+
+export default config;
