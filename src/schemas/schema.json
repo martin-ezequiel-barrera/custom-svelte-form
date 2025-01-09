@@ -1,0 +1,54 @@
+{
+  "type": "object",
+  "properties": {
+    "string": {
+      "type": "string"
+    },
+    "boolean": {
+      "type": "boolean",
+      "description": "Boolean description as a tooltip"
+    },
+    "exampleRadioEnum": {
+      "type": "string",
+      "enum": ["One", "Two", "Three"]
+    },
+    "number": {
+      "type": "number"
+    },
+    "integer": {
+      "type": "integer"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "time": {
+      "type": "string",
+      "format": "time"
+    },
+    "dateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "enum": {
+      "type": "string",
+      "enum": ["One", "Two", "Three"]
+    },
+     "comments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "message": {
+            "type": "string",
+            "maxLength": 5
+          }
+        }
+      }
+    } 
+  }
+}
