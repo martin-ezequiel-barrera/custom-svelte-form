@@ -4,18 +4,17 @@
   import { createEventDispatcher } from 'svelte';
   import { render } from 'react-dom';
   import { JsonForms } from '@jsonforms/react';
-  import { materialRenderers } from '@jsonforms/material-renderers';  // Using material theme for UI
+  import { materialRenderers } from '@jsonforms/material-renderers';
 
   export let schema = {};
   export let uischema = {};
-  export let formData = {};  // Data passed from Svelte store or parent component
+  export let data = {}; 
 
   let container;
   const dispatch = createEventDispatcher();  // Initialize the dispatcher
 
   const handleChange = (updatedData) => {
-    // Trigger the change handler in the parent component
-    dispatch('data-change', updatedData);  // Dispatch the updated data
+    dispatch('data-change', updatedData);
   };
 
   onMount(() => {
@@ -23,9 +22,9 @@
       React.createElement(JsonForms, {
         schema,
         uischema,
-        data: formData,
+        data: data,
         renderers: materialRenderers,
-        onChange: handleChange,  // Handle changes to form data
+        onChange: handleChange,  
       }),
       container
     );

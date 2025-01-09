@@ -26,29 +26,21 @@
       "type": "string",
       "format": "time"
     },
-    "dateTime": {
-      "type": "string",
-      "format": "date-time"
-    },
     "enum": {
       "type": "string",
       "enum": ["One", "Two", "Three"]
     },
-     "comments": {
+    "comments": {
       "type": "array",
+      "title": "Array",
       "items": {
         "type": "object",
         "properties": {
-          "date": {
-            "type": "string",
-            "format": "date"
-          },
-          "message": {
-            "type": "string",
-            "maxLength": 5
+          "name": {
+            "type": "string"
           }
         }
       }
-    } 
+    }
   }
 }

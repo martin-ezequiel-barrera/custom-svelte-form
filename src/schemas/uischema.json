@@ -34,30 +34,23 @@
     },
     {
       "type": "Control",
-      "scope": "#/properties/dateTime"
-    },
-    {
-      "type": "Control",
       "scope": "#/properties/enum"
     },
     {
       "type": "Control",
       "scope": "#/properties/comments",
       "options": {
-        "comments": {
-          "type": "Contorl",
-          "columns": [
+        "elementLabelProp": "name",
+        "detail": {
+          "type": "VerticalLayout",
+          "elements": [
             {
-              "scope": "#/properties/comments/items/properties/date",
-              "label": "Date"
-            },
-            {
-              "scope": "#/properties/comments/items/properties/message",
-              "label": "Message"
+              "type": "Control",
+              "scope": "#/properties/name"
             }
           ]
         }
       }
-    }
+    } 
   ]
 }
