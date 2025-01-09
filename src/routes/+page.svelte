@@ -1,9 +1,8 @@
 <script lang="ts">
+  import { writable, get } from "svelte/store";
   import JsonFormsWrapper from "$lib/JsonFormsWrapper.svelte";
   import schema from "../schemas/schema.json";
   import uischema from "../schemas/uischema.json";
-  import { writable } from "svelte/store";
-  import { get } from "svelte/store";
 
   // Initialize the form data store
   const formData = writable({
@@ -28,7 +27,7 @@
 
   // Handle form submission
   const handleSubmit = async () => {
-    const formValues = get(formData); // Access current form data from the store
+    const formValues = get(formData);
     alert("Form submitted with data");
 
     try {
@@ -97,6 +96,10 @@
     background-color: #f4f4f4;
     height: 650px;
     overflow-y: scroll;
+  }
+
+  input {
+    margin-top: 10px;
   }
 
   .textarea {
