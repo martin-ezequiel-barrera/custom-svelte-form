@@ -40,10 +40,14 @@
       "type": "Control",
       "scope": "#/properties/comments",
       "options": {
-        "elementLabelProp": "name",
+        "elementLabelProp": "comment",
         "detail": {
           "type": "VerticalLayout",
           "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/message"
+            },
             {
               "type": "Control",
               "scope": "#/properties/name"
