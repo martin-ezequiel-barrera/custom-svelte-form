@@ -25,6 +25,6 @@ export const formData = writable<FormData>({
   date: "2020-06-25",
   time: "23:08:00",
   enum: "Two",
-  comments: [{ name: "John Morales" }, { name: "Rene Bustamante" }]
+  comments: [{ name: "John Morales" }, { name: "Paul Walker" }]
 });
 

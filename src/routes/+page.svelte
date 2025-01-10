@@ -4,8 +4,19 @@
   import schema from "../schemas/schema.json";
   import uischema from "../schemas/uischema.json";
 
-  // Initialize the form data store
-  const formData = writable({
+  type FormData = {
+    string: string;
+    boolean: boolean;
+    exampleRadioEnum: string;
+    number: number;
+    integer: number;
+    date: string;
+    time: string;
+    enum: string;
+    comments: { name: string }[];
+  };
+
+  const formData = writable<FormData>({
     string: "This is a string",
     boolean: true,
     exampleRadioEnum: "Two",
@@ -14,18 +25,16 @@
     date: "2020-06-25",
     time: "23:08:00",
     enum: "Two",
-    comments: [{ name: "John Morales" }, { name: "Rene Bustamante" }],
+    comments: [{ name: "John Morales" }, { name: "Paul Walker" }],
   });
 
   let data = $formData;
 
-  // Handle data change event from JsonFormsWrapper
   const handleDataChange = (event: CustomEvent<FormData>) => {
     const updatedData: FormData = event.detail;
     formData.set(updatedData);
   };
 
-  // Handle form submission
   const handleSubmit = async () => {
     const formValues = get(formData);
     alert("Form submitted with data");
@@ -71,7 +80,7 @@
     <textarea
       class="textarea"
       readonly
-      value={JSON.stringify($formData.data, null, 2)}
+      value={JSON.stringify($formData, null, 2)}
     ></textarea>
   </div>
 </div>
