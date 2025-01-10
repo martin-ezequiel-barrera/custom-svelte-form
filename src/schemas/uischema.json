@@ -40,7 +40,7 @@
       "type": "Control",
       "scope": "#/properties/comments",
       "options": {
-        "elementLabelProp": "comment",
+        "elementLabelProp": "name",
         "detail": {
           "type": "VerticalLayout",
           "elements": [

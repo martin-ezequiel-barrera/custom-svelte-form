@@ -2,6 +2,7 @@ import { writable } from 'svelte/store';
 
 export type Comment = {
   name: string;
+  message?: string;
 };
 
 export type FormData = {
@@ -25,6 +26,6 @@ export const formData = writable<FormData>({
   date: "2020-06-25",
   time: "23:08:00",
   enum: "Two",
-  comments: [{ name: "John Morales" }, { name: "Paul Walker" }]
+  comments: [{ name: "John Morales", message: "This is an example message" }, { name: "Paul Walker", message: "Get ready for booohay" }]
 });
 

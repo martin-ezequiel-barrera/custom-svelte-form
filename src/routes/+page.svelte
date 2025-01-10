@@ -13,7 +13,7 @@
     date: string;
     time: string;
     enum: string;
-    comments: { name: string }[];
+    comments: { name: string; message: string }[];
   };
 
   const formData = writable<FormData>({
@@ -25,7 +25,10 @@
     date: "2020-06-25",
     time: "23:08:00",
     enum: "Two",
-    comments: [{ name: "John Morales" }, { name: "Paul Walker" }],
+    comments: [
+      { name: "John Morales", message: "This is an example message" },
+      { name: "Paul Walker", message: "Get ready for booohay" },
+    ],
   });
 
   let data = $formData;
@@ -68,7 +71,6 @@
         {data}
         on:data-change={handleDataChange}
       />
-
       <div class="button-container">
         <button type="submit" class="submit-button">Submit</button>
       </div>
